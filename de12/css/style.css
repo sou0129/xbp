@@ -22,12 +22,12 @@ logotohome img{
 
 /* ========== common ========== */
 html, body {
-	font-size: 16px;
+	font-size: 20px;
 	font-family: sans-serif;
-	color: #393939;
+	color: #010101;
     margin-left: 15px;
     margin-bottom: 40px;
-	background: #efefef;
+	background-color: rgb(226, 218, 160);
 }
 h1{
     text-indent: 0em;
