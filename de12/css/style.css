@@ -37,14 +37,17 @@ h2{
     margin-top: 1em;
 }
 h3{
-    margin-left: 2em;
+    margin-left: 0;
 }
 div{
     margin-top: 1em;
-    margin-left: 3em;
+    margin-left: 0;
 }
 p{
-    margin-left: 3em;
+    margin-left: 0;
+    max-width: 800px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 span.blackback{
     text-indent: 3em;
