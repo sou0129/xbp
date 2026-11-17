@@ -27,3 +27,7 @@ a:focus-visible { outline: 2px solid #355b74; outline-offset: 4px; }
 body { font-weight: 600; }
 a, li { font-weight: 600; }
 h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+
+/* Consistent bold text throughout the portfolio */
+body { font-family: Meiryo, "Yu Gothic", sans-serif; font-weight: 700; }
+p, a, li, div, main, section, article, span, h1, h2, h3, h4, h5, h6 { font-weight: 700; }
