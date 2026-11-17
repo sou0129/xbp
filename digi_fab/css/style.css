@@ -60,3 +60,8 @@ a:visited { color: #355b74; }
 a:hover { color: #1d3c50; }
 a:focus-visible { outline: 2px solid #355b74; outline-offset: 4px; }
 span.blackback { background: #30342f; color: #f4f4f1; }
+
+/* Readable text weights */
+body { font-weight: 600; }
+a, li { font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }

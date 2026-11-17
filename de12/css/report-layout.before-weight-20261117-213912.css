@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* Shared layout for the six report pages. Image files and content stay unchanged. */
+* { box-sizing: border-box; }
+html { font-size: 16px; background: #f4f4f1; color: #30342f; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic", Meiryo, sans-serif; line-height: 1.9; overflow-wrap: anywhere; }
+.report-page { width: min(100% - 64px, 960px); margin: 0 auto; padding: 56px 0 80px; }
+h1 { margin: 0 0 40px; padding-bottom: 20px; border-bottom: 2px solid #697663; font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.4; letter-spacing: .03em; }
+h2 { margin: 48px 0 20px; padding-bottom: 10px; border-bottom: 1px solid #d3d7cf; font-size: 1.25rem; line-height: 1.6; }
+h1 + h2 { margin-top: 0; }
+p { margin: 16px 0 24px; }
+img { display: block; width: 100%; max-width: 640px; height: auto; margin: 24px 0; object-fit: contain; }
+h2 + img, h1 + img { margin-top: 0; }
+p + img { margin-top: 44px; }
+ul, ol { margin: 16px 0 28px; padding-left: 1.5em; }
+li { margin: 8px 0; }
+a { color: #355b74; text-underline-offset: .2em; }
+a:hover { color: #1d3c50; }
+a:focus-visible { outline: 2px solid #355b74; outline-offset: 4px; }
+@media (max-width: 600px) {
+ .report-page { width: calc(100% - 40px); padding: 32px 0 48px; }
+ h1 { margin-bottom: 28px; }
+ h2 { margin-top: 36px; }
+ p br, li br { display: none; }
+}
