@@ -52,3 +52,11 @@ span.blackback{
     color: #efefef;
 }
 
+
+/* Unified portfolio colors */
+html, body { background: #f4f4f1; color: #30342f; }
+a { color: #355b74; text-underline-offset: .2em; }
+a:visited { color: #355b74; }
+a:hover { color: #1d3c50; }
+a:focus-visible { outline: 2px solid #355b74; outline-offset: 4px; }
+span.blackback { background: #30342f; color: #f4f4f1; }
