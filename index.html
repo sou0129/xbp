@@ -4,9 +4,58 @@
 <head>
 <meta charset="utf-8"/>
 <title>XBP_HPsample</title>
+<style>
+  #page-loader { position: fixed; inset: 0; z-index: 9999; display: grid; place-content: center; text-align: center; background: #fff; color: #222; }
+  #page-loader[hidden] { display: none; }
+  #page-loader .loader-mark { display: flex; justify-content: center; gap: .15em; font: 800 clamp(3rem, 12vw, 6rem)/1 system-ui, sans-serif; }
+  #page-loader .loader-mark span { display: grid; place-items: center; width: 1.05em; height: 1.1em; border: 2px solid currentColor; border-radius: .22em; animation: loader-hop 1.2s ease-in-out infinite; }
+  #page-loader .loader-mark span:nth-child(2) { color: #2459a9; animation-delay: .12s; }
+  #page-loader .loader-mark span:nth-child(3) { color: #785399; animation-delay: .24s; }
+  #page-loader p { margin: 1.5rem 0 0; }
+  @keyframes loader-hop { 0%, 55%, 100% { transform: translateY(0); } 28% { transform: translateY(-.18em); } }
+  @media (prefers-reduced-motion: reduce) { #page-loader .loader-mark span { animation: none; } }
+</style>
+<script>
+  (() => {
+    let finished = false;
+    const delay = setTimeout(() => {
+      const loader = document.querySelector('#page-loader');
+      if (loader) loader.hidden = false;
+    }, 450);
 
-<link href="./css/portfolio-design.css?v=20261117-design1" rel="stylesheet"/><meta content="width=device-width, initial-scale=1" name="viewport"/></head>
-<body class="home-page"><main class="home-shell">
+    function finish() {
+      if (finished) return;
+      finished = true;
+      clearTimeout(delay);
+      clearTimeout(fallback);
+      const loader = document.querySelector('#page-loader');
+      if (loader) loader.hidden = true;
+    }
+
+    const fallback = setTimeout(finish, 8000);
+    window.addEventListener('load', finish, { once: true });
+    let stylesheetSettled = false;
+    function checkReady() {
+      const logo = document.querySelector('.home-shell img');
+      if (document.readyState !== 'loading' && stylesheetSettled && logo?.complete) finish();
+    }
+    for (const eventName of ['load', 'error']) {
+      document.addEventListener(eventName, (event) => {
+        if (event.target.id === 'home-stylesheet') stylesheetSettled = true;
+        checkReady();
+      }, true);
+    }
+    document.addEventListener('DOMContentLoaded', checkReady, { once: true });
+  })();
+</script>
+
+<link id="home-stylesheet" href="./css/portfolio-design.css?v=20261117-design1" rel="stylesheet"/><meta content="width=device-width, initial-scale=1" name="viewport"/></head>
+<body class="home-page">
+<div id="page-loader" role="status" hidden>
+  <div class="loader-mark" aria-hidden="true"><span>X</span><span>B</span><span>P</span></div>
+  <p>読み込み中…</p>
+</div>
+<main class="home-shell">
 <logotohome>
 <a href="./index.html"><img alt="" src="./images/0_XBlogo.png"/></a>
 </logotohome>
