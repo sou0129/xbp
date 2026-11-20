@@ -8,25 +8,78 @@
 </head>
 <body>
   <main class="report-page">
-    <h1>ゲーム制作：［ゲーム名］</h1>
+    <h1>ゲーム制作：ヨット</h1>
     <section class="report-section">
       <h2>ゲームの概要</h2>
-      <p>［グループで考えたゲームの内容や目的］</p>
+      <p>グループの中では、じゃんけんやおみくじといったゲームが作れそうと話していた。</p>
     </section>
     <section class="report-section">
       <h2>遊び方</h2>
-      <p>［操作方法・ルール・クリア条件］</p>
+      <p>最初に再生ボタンを押すと、サイコロ五つが振られて結果が出る。その中から変えたい目を選んでもう一回振る。<br>
+      この再抽選は三回までできる。</p>
     </section>
     
     <section class="report-section">
       <h2>制作した内容</h2>
-      <p>［自分の担当や工夫を書く。未完成の場合は、できたこととできなかったことを書く］</p>
+      <p>サイコロを使ったゲームの「ヨット」を作ろうと思った。<br>
+        しかし、12個ある役目を全部作るのは大変だし、今の知識ではできないと思ったからゾロ目を狙うゲームにした。</p>
     </section>
     <section class="report-section">
-      <h2>ソースコード</h2>
-      <p><a href="./files/source.txt">［ソースコードへのリンク］</a></p>
+      <h2>うまくいかなかったこと</h2>
+      <p><img src="./images/スクリーンショット 2026-11-19 141105.png" width="30%"/><br>
+      最初に作ったときは、写真のように思った通りの数字が変わってくれなかった。<br>
+    写真では１，５，６の目を変えようとして数字を打っているが、コード的には１，５，６番目の数字が変わることになってしまっていた。</p>
     </section>
-    
+
+    <section class="report-section">
+      <h2>ソースコード</h2>
+      <pre style="background:#FAFAF9;color:#3f3f46;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:1.7;padding:16px 18px;margin:0;border-radius:4px;overflow-x:auto;white-space:pre;tab-size:4;-moz-tab-size:4;"><code style="font-family:inherit;background:none;padding:0;"><span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">1</span><span style="color:#0f766e;">import</span> random
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">2</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">3</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"===== ヨットゲーム ====="</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">4</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">5</span><span style="color:#8a8a94;font-style:italic;"># サイコロを5個振る</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">6</span>dice <span style="color:#71717a;">=</span> <span style="color:#a1a1aa;">[</span>random<span style="color:#a1a1aa;">.</span>randint<span style="color:#a1a1aa;">(</span><span style="color:#a16207;">1</span><span style="color:#a1a1aa;">,</span> <span style="color:#a16207;">6</span><span style="color:#a1a1aa;">)</span> <span style="color:#0f766e;">for</span> i <span style="color:#0f766e;">in</span> <span style="color:#0f766e;">range</span><span style="color:#a1a1aa;">(</span><span style="color:#a16207;">5</span><span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">]</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">7</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">8</span><span style="color:#0f766e;">for</span> turn <span style="color:#0f766e;">in</span> <span style="color:#0f766e;">range</span><span style="color:#a1a1aa;">(</span><span style="color:#a16207;">3</span><span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">9</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">10</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"\n"</span><span style="color:#a1a1aa;">,</span> turn <span style="color:#71717a;">+</span> <span style="color:#a16207;">1</span><span style="color:#a1a1aa;">,</span> <span style="color:#7B2CBF;">"回目"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">11</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"サイコロ:"</span><span style="color:#a1a1aa;">,</span> dice<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">12</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">13</span>    <span style="color:#0f766e;">if</span> <span style="color:#0f766e;">len</span><span style="color:#a1a1aa;">(</span><span style="color:#0f766e;">set</span><span style="color:#a1a1aa;">(</span>dice<span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">)</span> <span style="color:#71717a;">==</span> <span style="color:#a16207;">1</span> <span style="color:#0f766e;">or</span> turn <span style="color:#71717a;">==</span> <span style="color:#a16207;">2</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">14</span>        <span style="color:#0f766e;">break</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">15</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">16</span>    available <span style="color:#71717a;">=</span> <span style="color:#a1a1aa;">{</span><span style="color:#0f766e;">str</span><span style="color:#a1a1aa;">(</span>face<span style="color:#a1a1aa;">)</span> <span style="color:#0f766e;">for</span> face <span style="color:#0f766e;">in</span> dice<span style="color:#a1a1aa;">}</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">17</span>    <span style="color:#0f766e;">while</span> <span style="color:#a16207;">True</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">18</span>        keep <span style="color:#71717a;">=</span> <span style="color:#0f766e;">input</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"残したい出目（例: 4 6、Enterで全部振り直し）："</span><span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">.</span>split<span style="color:#a1a1aa;">(</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">19</span>        <span style="color:#0f766e;">if</span> <span style="color:#0f766e;">set</span><span style="color:#a1a1aa;">(</span>keep<span style="color:#a1a1aa;">)</span> <span style="color:#71717a;">&lt;=</span> available<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">20</span>            <span style="color:#0f766e;">break</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">21</span>        <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"今出ている目だけを、空白で区切って入力してください。"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">22</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">23</span>    kept_dice <span style="color:#71717a;">=</span> <span style="color:#a1a1aa;">[</span>face <span style="color:#0f766e;">for</span> face <span style="color:#0f766e;">in</span> dice <span style="color:#0f766e;">if</span> <span style="color:#0f766e;">str</span><span style="color:#a1a1aa;">(</span>face<span style="color:#a1a1aa;">)</span> <span style="color:#0f766e;">in</span> keep<span style="color:#a1a1aa;">]</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">24</span>    <span style="color:#0f766e;">if</span> kept_dice<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">25</span>        <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"残したサイコロ:"</span><span style="color:#a1a1aa;">,</span> kept_dice<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">26</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">27</span>    <span style="color:#0f766e;">for</span> index<span style="color:#a1a1aa;">,</span> face <span style="color:#0f766e;">in</span> <span style="color:#0f766e;">enumerate</span><span style="color:#a1a1aa;">(</span>dice<span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">28</span>        <span style="color:#0f766e;">if</span> <span style="color:#0f766e;">str</span><span style="color:#a1a1aa;">(</span>face<span style="color:#a1a1aa;">)</span> <span style="color:#0f766e;">not</span> <span style="color:#0f766e;">in</span> keep<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">29</span>            dice<span style="color:#a1a1aa;">[</span>index<span style="color:#a1a1aa;">]</span> <span style="color:#71717a;">=</span> random<span style="color:#a1a1aa;">.</span>randint<span style="color:#a1a1aa;">(</span><span style="color:#a16207;">1</span><span style="color:#a1a1aa;">,</span> <span style="color:#a16207;">6</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">30</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">31</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"\n===== 結果 ====="</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">32</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"最終的なサイコロ:"</span><span style="color:#a1a1aa;">,</span> dice<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">33</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">34</span><span style="color:#8a8a94;font-style:italic;"># ヨット判定</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">35</span><span style="color:#0f766e;">if</span> <span style="color:#0f766e;">len</span><span style="color:#a1a1aa;">(</span><span style="color:#0f766e;">set</span><span style="color:#a1a1aa;">(</span>dice<span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">)</span> <span style="color:#71717a;">==</span> <span style="color:#a16207;">1</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">36</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"ヨット！50点！"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">37</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">38</span><span style="color:#0f766e;">elif</span> <span style="color:#0f766e;">any</span><span style="color:#a1a1aa;">(</span>dice<span style="color:#a1a1aa;">.</span>count<span style="color:#a1a1aa;">(</span>face<span style="color:#a1a1aa;">)</span> <span style="color:#71717a;">==</span> <span style="color:#a16207;">4</span> <span style="color:#0f766e;">for</span> face <span style="color:#0f766e;">in</span> dice<span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">39</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"惜しい！あと1個でヨット！"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">40</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">41</span><span style="color:#0f766e;">else</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">42</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"ヨットならず！"</span><span style="color:#a1a1aa;">)</span></code></pre>
+    </section>
+
+    <section class="report-section">
+      <h2>参照ページ</h2>
+      <p><a href="https://docs.python.org/ja/3/tutorial/">Python公式チュートリアル</a></p>
     </section>
   </main>
 </body>
